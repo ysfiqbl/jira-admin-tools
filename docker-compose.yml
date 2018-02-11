@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  jira_admin_tools:
+    container_name: jira_admin_tools
+    build: .
+    command: python jira-client.py config.json
+    env_file:
+     - '.env'
+    volumes:
+      - ".:/app"
